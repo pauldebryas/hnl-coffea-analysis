@@ -1,0 +1,164 @@
+#list of all the available samples
+
+signal_samples = {
+    'HNL100':'HNL_tau_M-100.root',
+    'HNL125':'HNL_tau_M-125.root',
+    'HNL150':'HNL_tau_M-150.root',
+    'HNL200':'HNL_tau_M-200.root',
+    'HNL250':'HNL_tau_M-250.root',
+    'HNL300':'HNL_tau_M-300.root',
+    'HNL350':'HNL_tau_M-350.root',
+    'HNL400':'HNL_tau_M-400.root',
+    'HNL450':'HNL_tau_M-450.root',
+    'HNL500':'HNL_tau_M-500.root',
+    'HNL600':'HNL_tau_M-600.root',
+    'HNL700':'HNL_tau_M-700.root',
+    'HNL800':'HNL_tau_M-800.root',
+    'HNL900':'HNL_tau_M-900.root',
+    'HNL1000':'HNL_tau_M-1000.root',
+}
+
+MCbackground_samples = {
+    #Drell-Yann
+    'DY1Jets_To_LL_M-50':'DY1Jets_To_LL_M-50',
+    'DY2Jets_To_LL_M-50':'DY2Jets_To_LL_M-50',
+    'DY3Jets_To_LL_M-50':'DY3Jets_To_LL_M-50',
+    'DY4Jets_To_LL_M-50':'DY4Jets_To_LL_M-50.root',
+    'DYJets_To_LL_M-10to50':'DYJets_To_LL_M-10to50',
+    'DYJets_To_LL_M-50-amcatnloFXFX':'DYJets_To_LL_M-50-amcatnloFXFX',
+    'DYJets_To_LL_M-50-madgraphMLM':'DYJets_To_LL_M-50-madgraphMLM',
+    'DYJets_To_LL_M-50-madgraphMLM-ext':'DYJets_To_LL_M-50-madgraphMLM-ext',
+    #ELECRTOWEAK
+    'EWK_WMinus2Jets_W_To_LNu_M-50':'EWK_WMinus2Jets_W_To_LNu_M-50.root',
+    'EWK_WPlus2Jets_W_To_LNu_M-50':'EWK_WPlus2Jets_W_To_LNu_M-50.root',
+    'EWK_Z2Jets_Z_To_LL_M-50':'EWK_Z2Jets_Z_To_LL_M-50.root',
+    #singletop
+    'ST_t-channel_antitop_4f_InclusiveDecays':'ST_t-channel_antitop_4f_InclusiveDecays',
+    'ST_t-channel_top_4f_InclusiveDecays':'ST_t-channel_top_4f_InclusiveDecays',
+    'ST_tW_antitop_5f_inclusiveDecays':'ST_tW_antitop_5f_inclusiveDecays.root',
+    'ST_tW_top_5f_inclusiveDecays':'ST_tW_top_5f_inclusiveDecays.root',
+    #TTbar
+    'TT_To_2L2Nu':'TT_To_2L2Nu',
+    'TT_To_Hadronic':'TT_To_Hadronic',
+    'TT_To_SemiLeptonic':'TT_To_SemiLeptonic',
+    #TT + bosons
+    'TTWJets_To_LNu':'TTWJets_To_LNu',
+    'TTWW':'TTWW.root',
+    'TTWZ':'TTWZ.root',
+    'TTZ_To_LLNuNu_M-10':'TTZ_To_LLNuNu_M-10',
+    'TTZZ':'TTZZ.root',
+    #W+jets
+    'W2Jets_To_LNu':'W2Jets_To_LNu',
+    'W3Jets_To_LNu':'W3Jets_To_LNu',
+    'W4Jets_To_LNu':'W4Jets_To_LNu.root',
+    'WJ1ets_To_LNu':'WJ1ets_To_LNu',
+    'WJets_To_LNu':'WJets_To_LNu',
+    #DiBoson
+    'WW':'WW.root',
+    'WW_To_2L2Nu':'WW_To_2L2Nu.root',
+    'WZ':'WZ.root',
+    'WZ_To_2Q2L':'WZ_To_2Q2L',
+    'WZ_To_3LNu':'WZ_To_3LNu.root',
+    'ZZ':'ZZ.root',
+    'ZZ_To_2L2Nu':'ZZ_To_2L2Nu',
+    'ZZ_To_2Q2L':'ZZ_To_2Q2L',
+    'ZZ_To_4L':'ZZ_To_4L',
+    #Tribosons
+    'WWW_4F_ext':'WWW_4F_ext.root',
+    'WWW_4F':'WWW_4F.root',
+    'WWZ_4F_ext':'WWZ_4F_ext', 
+    'WWZ_4F':'WWZ_4F.root',
+    'WZZ_ext':'WZZ_ext',
+    'WZZ':'WZZ.root',
+    'ZZZ_ext':'ZZZ_ext.root',
+    'ZZZ':'ZZZ.root',
+}
+
+Data_samples = {
+    #EGamma
+    'EGamma_2018A': 'EGamma_2018A',
+    'EGamma_2018B':'EGamma_2018B',
+    'EGamma_2018C':'EGamma_2018C',
+    'EGamma_2018D':'EGamma_2018D',
+    #SingleMuon
+    'SingleMuon_2018A':'SingleMuon_2018A',
+    'SingleMuon_2018B':'SingleMuon_2018B',
+    'SingleMuon_2018C':'SingleMuon_2018C',
+    'SingleMuon_2018D':'SingleMuon_2018D',
+    #Tau
+    'Tau_2018A':'Tau_2018A',
+    'Tau_2018B':'Tau_2018B',
+    'Tau_2018C':'Tau_2018C',
+    'Tau_2018D':'Tau_2018D',
+}
+
+# Initialized plot scale
+plot_scale = {
+    'HNL100':1.,
+    'HNL125':1.,
+    'HNL150':1.,
+    'HNL200':1.,
+    'HNL250':1.,
+    'HNL300':1.,
+    'HNL350':1.,
+    'HNL400':1.,
+    'HNL450':1.,
+    'HNL500':1.,
+    'HNL600':1.,
+    'HNL700':1.,
+    'HNL800':1.,
+    'HNL900':1.,
+    'HNL1000':1.,
+    #DY
+    'DY1Jets_To_LL_M-50':1.,
+    'DY2Jets_To_LL_M-50':1.,
+    'DY3Jets_To_LL_M-50':1.,
+    'DY4Jets_To_LL_M-50':1.,
+    'DYJets_To_LL_M-10to50':1.,
+    'DYJets_To_LL_M-50-amcatnloFXFX':1.,
+    'DYJets_To_LL_M-50-madgraphMLM':1.,
+    'DYJets_To_LL_M-50-madgraphMLM-ext':1.,
+    #EWK
+    'EWK_WMinus2Jets_W_To_LNu_M-50':1.,
+    'EWK_WPlus2Jets_W_To_LNu_M-50':1.,
+    'EWK_Z2Jets_Z_To_LL_M-50':1.,
+    #ST
+    'ST_t-channel_antitop_4f_InclusiveDecays':1.,
+    'ST_t-channel_top_4f_InclusiveDecays':1.,
+    'ST_tW_antitop_5f_inclusiveDecays':1.,
+    'ST_tW_top_5f_inclusiveDecays':1.,
+    #TT
+    'TT_To_2L2Nu':1.,
+    'TT_To_Hadronic':1.,
+    'TT_To_SemiLeptonic':1.,
+    #TT+Bosons
+    'TTWJets_To_LNu':1.,
+    'TTWW':1.,
+    'TTWZ':1.,
+    'TTZ_To_LLNuNu_M-10':1.,
+    'TTZZ':1.,
+    #S+Jets
+    'W2Jets_To_LNu':1.,
+    'W3Jets_To_LNu':1.,
+    'W4Jets_To_LNu':1.,
+    'WJ1ets_To_LNu':1.,
+    'WJets_To_LNu':1.,
+    'WW':1.,
+    'WW_To_2L2Nu':1.,
+    'WZ':1.,
+    'WZ_To_2Q2L':1.,
+    'WZ_To_3LNu':1.,
+    'ZZ':1.,
+    'ZZ_To_2L2Nu':1.,
+    'ZZ_To_2Q2L':1.,
+    'ZZ_To_4L':1.,
+    'WWW_4F_ext':1.,
+    'WWW_4F':1.,
+    'WWZ_4F_ext':1.,
+    'WWZ_4F':1.,
+    'WZZ_ext':1.,
+    'WZZ':1.,
+    'ZZZ_ext':1.,
+    'ZZZ':1.,
+}
+

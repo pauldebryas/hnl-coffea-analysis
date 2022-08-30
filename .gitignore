@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# ignore ALL files in ANY directory named figures
+figures/
+
+# ignore ALL files in ANY directory named results
+results/
+
+# my file to do quick testing
+playground_file.ipynb
+
+# for me only
+run_plots.py
