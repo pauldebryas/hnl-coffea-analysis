@@ -1,6 +1,6 @@
 # HNL analysis with coffea
 
-This code allows you to analyse HNL signal, background and data, see the cutflow and produce some plots.
+Offline analysis of HNL signal, background and data.
 
 ##  Requirements
 
@@ -35,20 +35,27 @@ You can clone the repository with the folowing command:
 git clone https://github.com/cms-hnl/hnl-coffea-tau
 ```
 
-The main file to be executed is `run_analysis.py`. 
+First you need to run `stitching/DY/stitching2D_DY.ipynb` and `stitching/WJets/stitching2D_WJets.ipynb` to compute and store stitching weights of Drell-Yan and W+Jets MC samples.
+
+Then for the analysis, the files to be executed are `main/run_analysis.py` and `main/run_counters.py`. 
 You can add --test option to make sure evrything works at first.
 You need to specify tag that will be added to produced pkl files.
 
 It saves the outcome in two pickle files located in the results/ directory:
-- counter_{tag}.pkl which save the original sumw (before skimming) of MC samples (backgrounds and HNL signal) --> CountEvents.py file
+- counter_{tag}.pkl which save the original sumw (before skimming) of MC samples (backgrounds and HNL signal) for scaling --> CountEvents.py file
 - result_{tag}.pkl which save the histograms and sumw/nevent after each cut --> HNLAnalysis.py file
 
-##  See the results
+##  Results
 
+###  main analysis
+In the main/ folder
 The files:
-- plot_figures.ipynb allows you to see the histograms that are saved in the result_{tag}.pkl file
-- print_cutflow.ipynb allows you to analyse the cutflow also saved in the result_{tag}.pkl file
+- plot_figures.ipynb allows you to see the histograms that are saved in the result_{tag}.pkl file and using counter_{tag}.pkl for scaling
+- print_cutflow.ipynb allows you to analyse the cutflow also saved in the result_{tag}.pkl file and using counter_{tag}.pkl for scaling
 
+###  DeepTau Comparaison 
+
+In the same way, the DeepTauComparaison/ folder allows you to compare and see the improvement DeepTau2p5 brings to the analysis compare to 2p1
 
 ## Documentation
 - Coffea: https://coffeateam.github.io/coffea/index.html

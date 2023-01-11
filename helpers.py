@@ -1,5 +1,68 @@
 import os
 import numpy as np
+import csv
+import awkward as ak
+import collections
+import sys
+
+DIR_PATH = '/Users/debryas/Desktop/PhD_work/HNL_tau_analysis/hnl-coffea-analysis'
+sys.path.append(DIR_PATH)
+
+def import_stitching_weights(sample):
+
+    if sample not in ['DYtoLL','WJetsToLNu']:
+        raise ('Incorrect arguments for importing stitching weights: '+ sample)
+    
+    stitching_weights = collections.defaultdict(dict)
+
+    with open(f'{DIR_PATH}/results/stitching_weights_2D_{sample}.csv', 'r') as f:
+        spamreader = csv.reader(f)
+        i = 0
+        for row in spamreader:
+            if i == 0:
+                y_bins = row[1:]
+            else:
+                j=0
+                for element in row[1:]:
+                    stitching_weights[row[0]][y_bins[j]] = float(element)
+                    j = j+1
+            i = i+1 
+    return stitching_weights
+
+def data_goodrun_lumi(ds):
+    # for a given data sample, extract the good runs and the corresponding luminosity
+    # good run for 2018 are stored in run2018_lumi.csv file
+    with open(f'{DIR_PATH}/luminosity/run2018_lumi.csv', newline='') as csvfile:
+        csv_reader = csv.reader(filter(lambda row: row[0]!='#', csvfile))
+        run2018_goodrun = list(csv_reader)
+
+    #store only information that we need: run number and luminosity
+    run2018_run_lumi = []
+    for i in range(len(run2018_goodrun)):
+        run2018_run_lumi.append([run2018_goodrun[i][0][0:6],run2018_goodrun[i][5]])
+    run2018_run_lumi = np.array(run2018_run_lumi).astype(float)
+
+    #then found the run in the data file (stored in run_Data_ds.csv file)
+    run_data = []
+    with open(f'{DIR_PATH}/luminosity/run_Data/run_'+ds+'.csv', newline='') as csvfile:
+        csv_reader = csv.reader(filter(lambda row: row[0]!='#', csvfile))
+        run_data.append(list(csv_reader))
+    run_data = np.concatenate(run_data).astype(float)
+
+    # do the matching with the "good run" in run2018_lumi.csv
+    run_lumi = []
+    for i in range(len(run_data)):
+        result = np.where(run2018_run_lumi[:,0] == run_data[i])
+        if len(result[0]) == 1:
+            index = result[0][0]
+            run_lumi.append([run_data[i],run2018_run_lumi[index][1]])
+        #if len(result[0]) == 0:
+            #print("no good run found in run2018_lumi.csv for "+str(ds[:-1])+", run: "+str(run_data[i]))
+        if len(result[0]) > 1:
+            print("WARNING: "+str(ds[:-1])+", run: "+str(run_data[i])+" has multiple matching in run2018_lumi.csv")
+    run_lumi = np.array(run_lumi, dtype=object).astype(float) # add dtype=object to avoir VisibleDeprecationWarning
+    #return an array with good runs and their corresponding luminosity
+    return run_lumi
 
 def delta_r2(v1, v2):
     '''Calculates deltaR squared between two particles v1, v2 whose
